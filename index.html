@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tax Calculator</h1>
+        <form id="taxForm">
+            <div class="form-group">
+                <label for="income">Enter Gross Annual Income</label>
+                <input type="number" class="form-control" id="income" required>
+            </div>
+            <div class="form-group">
+                <label for="extraIncome">Enter Extra Income</label>
+                <input type="number" class="form-control" id="extraIncome">
+            </div>
+            <div class="form-group">
+                <label for="age">Select Age Group</label>
+                <select class="form-control" id="age" required>
+                    <option value="lt40">&lt; 40</option>
+                    <option value="ib40/60">&ge; 40 &lt; 60</option>
+                    <option value="gt60">&ge; 60</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="deductions">Enter total applicable deductions</label>
+                <input type="number" class="form-control" id="deductions">
+            </div>
+            <button type="submit" class="btn">Calculate Tax</button>
+        </form>
+        <div class="error-icons">
+            <img src="error-icon.png" alt="Error Icon" class="error-icon hidden" id="incomeError">
+            <img src="error-icon.png" alt="Error Icon" class="error-icon hidden" id="extraIncomeError">
+            <img src="error-icon.png" alt="Error Icon" class="error-icon hidden" id="ageError">
+        </div>
+    </div>
+    <div class="modal hidden" id="resultModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tax Calculation Result</h2>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
